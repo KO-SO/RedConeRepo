@@ -1,0 +1,11 @@
+[Unit]
+Description=RedVideo Program
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/path/to/videoXX.out
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

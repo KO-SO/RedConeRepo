@@ -110,9 +110,9 @@ if(fd<0){
         //cv::imshow("mask", mask);
         ///* cv::imshow("blur", blur);*/
         // /*cv::imshow("canny", canny2);*/
-        cv::imshow("drawing", drawing);
-        FILE* fp = fopen("foo.txt", "a");  //ファイルに書き込み
-        fprintf(fp, "%d%D,", Boolean,Angle);
+        //cv::imshow("drawing", drawing);
+        FILE* fp = fopen("/home/pi/sample.txt", "a");  //ファイルに書き込み
+        fprintf(fp, "%d%d\n,", Boolean,Angle);
         fclose(fp);
         
         

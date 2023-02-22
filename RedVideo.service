@@ -1,11 +1,12 @@
 [Unit]
 Description=RedVideo Program
-After=multi-user.target
+After=local-fs.target
 
 [Service]
 Type=simple
-ExecStart=/path/to/videoXX.out
-Restart=always
+ExecStart=/usr/bin/sudo /home/pi/sample.out >> /home/pi/sample.log 2>&1
+User=root
+Group=root
 
 [Install]
 WantedBy=multi-user.target

@@ -64,13 +64,13 @@ if(fd<0){
 
         //============輪郭の可視化=========================================================
          // 輪郭を可視化してみます。分かりやすさのため、乱数を利用して色付けします。
-      cv::Mat drawing = cv::Mat::zeros(canny.size(), CV_8UC3);
+     /* cv::Mat drawing = cv::Mat::zeros(canny.size(), CV_8UC3);
         cv::RNG rng(12345);
 
         for (int i = 0; i < contours.size(); i++) {
             cv::Scalar color = cv::Scalar(rng.uniform(0, 256), rng.uniform(0, 256), rng.uniform(0, 256));
             cv::drawContours(drawing, contours, (int)i, color);
-        }
+        }*/
         //======輪郭の面積=====================================================================
         int maxArea = 0;
         int maxContourIndex = -1;   //最大の面積を持つ輪郭のカウンター

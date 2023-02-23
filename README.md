@@ -15,7 +15,7 @@
 - ラズパイ起動後、これをする
 - $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/arm-linux-gnueabihf
 - videoXの所を書き換える
--$ ++ -Wall videoX.cpp -o videoX.out -I /usr/local/include/opencv4 -L /usr/local/lib -lopencv_core -lopencv_objdetect -lopencv_highgui -lopencv_imgproc -lopencv_videoio -lopencv_imgcodecs -l wiringPi
+-$ g++ -Wall videoX.cpp -o videoX.out -I /usr/local/include/opencv4 -L /usr/local/lib -lopencv_core -lopencv_objdetect -lopencv_highgui -lopencv_imgproc -lopencv_videoio -lopencv_imgcodecs -l wiringPi
 
 
 ### config.txtに追記したこと

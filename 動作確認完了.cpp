@@ -39,7 +39,10 @@ if(fd<0){
         cvtColor(frame, hsv, cv::COLOR_BGR2HSV);
         // inRange によって Hue が特定の範囲にある領域の mask を取得します。
         Mat mask;//この範囲にある色は黒（２５５）、それ以外は0にしてmaskに返す
-        inRange(hsv, cv::Scalar(150, 100, 100), cv::Scalar(180, 255, 255), mask);
+        Mat mask1, mask2;
+        inRange(hsv, Scalar(0, 70, 50), Scalar(10, 255, 255), mask1);
+        inRange(hsv, Scalar(170, 70, 50), Scalar(180, 255, 255), mask2);
+        mask = mask1 | mask2; // マスクを合成
 
         //====================輪郭をとる===========================================
 

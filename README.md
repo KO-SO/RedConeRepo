@@ -26,25 +26,25 @@
 
 ### 注意点
 - 現在は、videoX.cppがコンパイルされ、videoX.outが出来ている。
-- sample.txtにログが書き込まれる
+- sample.txtにログが書き込まれる→本番前に、sample.txtを削除する必要がある。
 - imshow()関数をコメントアウトしないと、自動で実行することができない（ターミナルから、$./videoX.outで実行する分には問題ない）
 - 実行するファイルを変更する場合は.serviceファイルも書き換える
+- ラズベリーパイの電源をつける度にプログラムが実行されるため、不要なときは$sudo systemctl stop sample.serviceで止める
 
 ### 改善？すべき点
-- 使うラズベリーパイによって、primary UARTが異なる。そのため最終的に使うラズパイに設定を合わせて、設定を保存し、コードも直す
 - 閾値の調整（変数名Threshold）
 - inRange()関数での、色を取る範囲の調整
-- データを記録するファイルの状況を確認する（何も書き込まれていない or 存在しない）
 
 ### 便利？なコマンド
 
 #### 自動実行に関連する
-- sudo nano /etc/systemd/system/sample.service  //.serviceファイルに書き込む
+- sudo nano /etc/systemd/system/sample.service      //.serviceファイルに書き込む
 - sudo systemctl daemon-reload
-- sudo systemctl restart sample.service 
-- sudo systemctl status sample.service  
-- sudo systemctl stop sample.service
-- sudo systemctl enable sample.servic   //.serviceを有効化する
-
+- sudo systemctl restart sample.service
+- sudo systemctl status sample.service      //プログラムの動作状況の確認
+- sudo systemctl stop sample.service        //プログラムを止める
+- sudo systemctl enable sample.service       //.serviceを有効化する
+#### その他
 - vcgencmd get_camera   //カメラの接続確認
+- history
 
